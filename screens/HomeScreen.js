@@ -1,4 +1,5 @@
 import React from 'react';
+import getAsteroids from '../components/asteroid'
 import {
   Image,
   Button,
@@ -9,9 +10,12 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
+
+// import Joy from '../components/joystick';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -19,7 +23,9 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
-    const getHoroscope = () => { null }
+
+    const fakeInput = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,]
+
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -39,11 +45,13 @@ export default class HomeScreen extends React.Component {
 
             <Text style={styles.getStartedText}>Welcome to Asteroid</Text>
             <Button
-              onPress={() => getHoroscope()}
+              onPress={() => getAsteroids(fakeInput)}
               title="Get Horoscope"
               color="#841584"
               accessibilityLabel="Learn more about this purple button"
             />
+
+
 
           </View>
 
